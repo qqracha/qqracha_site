@@ -1,0 +1,133 @@
+:root{
+  --bg: #0b0b0b;
+  --panel: rgba(255,255,255,0.03);
+  --accent: #DCFBB2; /* pink version - #ff6fcf */
+  --muted: #9b9b9b;
+  --radius: 6px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Courier New", Courier, monospace;
+  background:var(--bg);
+  color:#ddd;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:40px 60px;
+}
+
+/* overlay для фона (будет менять background-image через JS) */
+#bg-overlay{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background-size:cover;
+  background-position:center;
+  opacity:0.08;
+  pointer-events:none;
+}
+
+/* header */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+.logo { color:var(--accent); font-size:28px; cursor:pointer; }
+.logo .dollar{ color:var(--accent); font-weight:700;}
+.navlinks a{
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:16px;
+  font-size:14px;
+}
+
+/* main */
+.container{ max-width:820px; margin:0 auto; }
+
+.box{
+  background:var(--panel);
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:var(--radius);
+  padding:18px;
+  margin-bottom:26px;
+  box-shadow:0 2px 0 rgba(0,0,0,0.6) inset;
+}
+.box h2{
+  color:var(--accent);
+  margin:0 0 10px 0;
+  font-size:18px;
+}
+
+/* about content */
+.content p{ margin:6px 0; color:#ddd; line-height:1.5; }
+.comment-inline{
+  display:inline-block;
+  margin-left:8px;
+  color:var(--muted);
+  font-style:normal;
+  font-size:12px;
+  cursor:help;
+}
+
+/* skills columns */
+.cols{ display:flex; gap:18px; }
+.col{ flex:1; }
+.card{
+  background:rgba(0,0,0,0.12);
+  padding:12px;
+  border-radius:6px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+.card h3{ color:var(--accent); margin:0 0 8px 0; font-size:14px;}
+.card ul{ margin:0; padding-left:18px; color:#ddd; }
+.card li{ margin-bottom:6px; }
+
+/* footer */
+.footer{ display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:10px;}
+.webring a{ color:var(--muted); text-decoration:none; font-size:13px; }
+.badges img{ height:36px; margin-left:8px; cursor:pointer; }
+
+/* bg-controls (мини-UI для смены фона) */
+.bg-controls{ margin-left:auto; display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); }
+.bg-controls input, .bg-controls select, .bg-controls button{
+  background:transparent; border:1px solid rgba(255,255,255,0.04); color:#ddd; padding:6px; border-radius:6px;
+}
+
+/* responsive */
+@media (max-width:700px){
+  body{ padding:20px; }
+  .cols{ flex-direction:column; }
+  .footer{ flex-direction:column; align-items:flex-start; gap:6px; }
+}
+
+.floating-msg {
+  position: fixed;
+  left: 50%;
+  top: 24%;
+  transform: translate(-50%, -20px);
+  background: rgba(0, 0, 0, 0.85);
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  opacity: 1;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+  z-index: 2000;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+body.shake {
+  animation: shake 0.3s linear;
+}
