@@ -8,13 +8,7 @@ BG_DIR = os.path.join(BASE_DIR, "static", "backgrounds")
 
 @app.route("/")
 def index():
-    # Получаем список локальных фоновых картинок (для селектора)
-    backgrounds = []
-    if os.path.isdir(BG_DIR):
-        for fn in os.listdir(BG_DIR):
-            if fn.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".webp")):
-                backgrounds.append(url_for('static', filename=f"backgrounds/{fn}"))
-    return render_template("index.html", backgrounds=backgrounds)
+    return render_template("index.html")
 
 # если нужно — вернуть badges (уже доступны через /static)
 # дополнительные маршруты не требуются для базового функционала

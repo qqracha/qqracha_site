@@ -2,45 +2,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
   const overlay = document.getElementById('bg-overlay');
   const logo = document.getElementById('logo');
 
-  // load saved bg (localStorage)
-  function applyBg(value){
-    if(!value){
-      overlay.style.backgroundImage = '';
-      overlay.style.backgroundColor = '';
-      overlay.style.opacity = '0';
-      return;
-    }
-    if(value.startsWith('color:')){
-      overlay.style.backgroundImage = '';
-      overlay.style.backgroundColor = value.slice(6);
-      overlay.style.opacity = '0.12';
-    } else {
-      overlay.style.backgroundImage = `url("${value}")`;
-      overlay.style.opacity = '0.08';
-    }
-  }
-
-  const saved = localStorage.getItem('site_bg');
-  if(saved) applyBg(saved);
-
-  // init select (if a local background matches, set selection)
-  if(saved){
-    if(saved.startsWith('color:')) bgSelect.value='__color__';
-    else {
-      const opts = Array.from(bgSelect.options).map(o=>o.value);
-      if(opts.includes(saved)) bgSelect.value = saved;
-      else if(saved.startsWith('http')) {
-        bgSelect.value='__url__';
-      }
-    }
-  }
-
-  bgSelect.addEventListener('change', (e)=>{
-    const v = e.target.value;
-    applyBg(v);
-    localStorage.setItem('site_bg', v);
-  });
-
   // пасхалка: при клике на logo — показываем рандомную фразу в виде временной подсказки
   const phrases = [
     "you are root now",
