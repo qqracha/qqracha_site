@@ -1,31 +1,22 @@
-document.addEventListener('DOMContentLoaded', ()=> {
-  console.log("main.js is work!"); // <- Проверка в консоли
-  const overlay = document.getElementById('bg-overlay');
+document.addEventListener('DOMContentLoaded', () => {
   const logo = document.getElementById('logo');
 
-  // пасхалка: при клике на logo — показываем рандомную фразу в виде временной подсказки
-  const phrases = [
-    "you are root now",
-    "sudo make me coffee",
-    "404 — identity not found",
-    "echo 'hello, human'",
-    "init 0 — just kidding"
+  // список ников/фраз для цикла
+  const nicknames = [
+    "qqracha",
+    "ruberoid",
+    "cascade",
+    "ruber",
   ];
+
+  let currentIndex = 0;
+
   logo.addEventListener('click', () => {
-    const msg = document.createElement('div');
-    msg.className = 'floating-msg';
-    msg.textContent = phrases[Math.floor(Math.random() * phrases.length)];
-
-    document.body.appendChild(msg);
-
-    // исчезает мягко
-    setTimeout(() => {
-      msg.style.opacity = '0';
-      msg.style.transform = 'translate(-50%, -40px)';
-    }, 50);
-
-    setTimeout(() => msg.remove(), 2000);
+    // меняем ник
+    currentIndex = (currentIndex + 1) % nicknames.length;
+    logo.querySelector('.qqracha').textContent = nicknames[currentIndex];
   });
+});
 
   // небольшая скрытая пасхалка: сочетание клавиш (g then e then o) покажет географическую фразу
   let buf="";
@@ -87,4 +78,3 @@ function launchConfetti() {
 }
 
   // don't do heavy stuff -> keep it light
-});

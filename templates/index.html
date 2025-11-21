@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>// qqracha.gpt</title>
   <div id="bg-overlay"></div>
+  <link rel="preload" href="{{ url_for('static', filename='backgrounds/anime.gif') }}" as="image">
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
+<body style="background:#000000;">
   <!--
     Комментарии (ваша просьба "добавь комментарии к тексту"):
     В HTML ниже добавлены комментарии для разработчика (видимые в исходнике)
@@ -16,9 +17,10 @@
     отображались ваши комментарии.
     goofy gpt
   -->
+  <canvas id="cursorCanvas"></canvas>
 
   <header class="topbar">
-    <div class="logo" id="logo" title="Нажми для пасхалки (random phrase)">
+    <div class="logo" id="logo" title="meow">
       <span class="dollar">$</span> <span class="qqracha">qqracha</span>
     </div>
     <nav class="navlinks">
@@ -33,18 +35,18 @@
   </header>
 
   <main class="container">
-    <section class="box inline-message" title="Комментарий: приветствие в шапке (можно редактировать)">
-      <p>&gt; Welcome to my digital space...</p>
-      <p>&gt; I'm a creative developer exploring the intersection of code and art.</p>
-    </section>
+    <!-- <section class="box inline-message">
+      <p>// hey hey</p>
+      <p>// let's get acquainted</p>
+    </section> -->
 
     <section class="box about" id="about">
       <h2>$ cat about.txt</h2>
       <!-- developer comment: это блок about; рядом title содержит ваш комментарий -->
-      <div class="content" title="Комментарий: Здесь — краткая самопрезентация">
-        <p><strong>Name:</strong> [Your Name] <span class="comment-inline" title="Комментарий: укажите своё имя">🛈</span></p>
-        <p><strong>Title:</strong> Full-stack Developer &amp; Creative Technologist</p>
-        <p><strong>Location:</strong> Inside the matrix <span class="comment-inline" title="Комментарий: можно поставить реальную локацию">🛈</span></p>
+      <div class="content">
+        <p><strong>Name: </strong>Egor Aldyukhov</p>
+        <p><strong>Title:</strong> Full-stack Python Developer &amp; Full-time lazybone<span class="comment-inline">// hehe</span></p>
+        <p><strong>Location:</strong> the webbed web</p>
         <p>I craft beautiful digital experiences using modern web technologies. Passionate about clean code, user experience, and pushing creative boundaries.</p>
       </div>
     </section>
@@ -88,9 +90,14 @@
 
     <!-- место для webring -->
     <footer class="footer">
-      <div class="webring">
-        <!-- добавлено место для webring.otomir23.me -->
+      <!-- <div class="webring">
         <a href="https://webring.otomir23.me/" target="_blank" rel="noopener" title="webring">webring: otomir23.me</a>
+      </div> -->
+
+      <div class="webring-nav">
+        <a href="https://nika.gay" class="prev">&lt; nika</a>
+        <a href="https://webring.otomir23.me/" target="_blank" rel="noopener" title="webring" class="current">webring: otomir23.me</a>
+        <a href="https://otomir23.me/" class="next">damir &gt;</a>
       </div>
 
       <div class="badges">
@@ -103,7 +110,7 @@
         />
         <!-- пример другого бейджа (можно заменить) -->
         <img src="{{ url_for('static', filename='badges/noclick.gif') }}"
-             alt="badge"
+             alt="yea and another"
              title="another badge" />
       </div>
       <div id="confetti"></div>
@@ -111,5 +118,6 @@
   </main>
 
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/cursor.js') }}"></script>
 </body>
 </html>
