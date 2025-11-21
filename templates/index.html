@@ -44,10 +44,10 @@
       <h2>$ cat about.txt</h2>
       <!-- developer comment: это блок about; рядом title содержит ваш комментарий -->
       <div class="content">
-        <p><strong>Name: </strong>Egor Aldyukhov</p>
-        <p><strong>Title:</strong> Full-stack Python Developer &amp; Full-time lazybone<span class="comment-inline">// hehe</span></p>
+        <p><strong>Name: </strong>Egor</p>
+        <p><strong>Title:</strong> Full-stack Python Developer &amp; Full-time lazybone</p>
         <p><strong>Location:</strong> the webbed web</p>
-        <p>I craft beautiful digital experiences using modern web technologies. Passionate about clean code, user experience, and pushing creative boundaries.</p>
+        <p>I craft beautiful digital experiences using modern web technologies. Passionate about clean code, user experience, and pushing creative boundaries.<span class="comment-inline">// chat-gpt ahh</span></p>
       </div>
     </section>
 
@@ -100,6 +100,18 @@
         <a href="https://otomir23.me/" class="next">damir &gt;</a>
       </div>
 
+      <div class="badge-row">
+        <a href="http://127.0.0.1:5000" target="_blank">  
+          <img src="static/badges/qqracha.png" width="88" height="31">
+        </a>
+        <a href="https://overflux.github.io/#home" target="_blank">
+          <img src="static/badges/overflux.png" width="88" height="31">
+        </a>    
+        <a href="https://nichind.dev/" target="_blank">
+          <img src="static/badges/nichind.gif" width="88" height="31">
+        </a>
+      </div>
+
       <div class="badges">
         <!-- кнопки-бейджи -->
         <img
@@ -109,7 +121,7 @@
           title="don't do it"
         />
         <!-- пример другого бейджа (можно заменить) -->
-        <img src="{{ url_for('static', filename='badges/noclick.gif') }}"
+        <img src="{{ url_for('static', filename='badges/nice.gif') }}"
              alt="yea and another"
              title="another badge" />
       </div>

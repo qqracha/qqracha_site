@@ -6,6 +6,11 @@
   --radius: 6px;
 }
 
+.badge-row {
+  display: flex;
+  gap: 8px; /* на всякий */
+}
+
 #bg-overlay {
     background: url("/static/backgrounds/anime.gif") center/cover no-repeat fixed;
     opacity: 0.2; /* вот здесь настраиваешь прозрачность */
@@ -107,7 +112,7 @@ body{
 /* footer */
 .footer{ display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:10px;}
 .webring a{ color:var(--muted); text-decoration:none; font-size:13px; }
-.badges img{ height:36px; margin-left:8px; cursor:pointer; }
+.badges img{ height:40px; margin-left:8px; cursor:pointer; }
 
 .webring-nav {
   display: flex;
