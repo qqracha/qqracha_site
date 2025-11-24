@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools | qqracha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="bg-overlay"></div>
+
+    <header class="topbar">
+        <div class="logo" id="logo">
+            <span class="dollar">$</span> <span class="qqracha">qqracha</span>
+        </div>
+        <nav class="navlinks">
+            <a href="/">home</a>
+            <span class="sep">/</span>
+            <a href="/tools" class="active">tools</a>
+            <span class="sep">/</span>
+            <a href="/contact">contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="box">
+                <h2>> server stats</h2>
+                <div class="stats">
+                    <span id="visit-count">Загрузка...</span>
+                    <span id="status">Проверка статуса...</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -88,6 +88,31 @@ body{
   cursor:help;
 }
 
+/* Стили для статистики */
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats span {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #9b9b9b;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: color 0.3s ease;
+}
+
+.stats span:hover {
+    color: #DCFBB2;
+}
+
 .comment-inline {
   color: #888;           /* серый цвет */
   font-style: italic;     /* курсив, по желанию */
