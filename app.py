@@ -4,7 +4,7 @@ from datetime import timedelta, datetime
 import json
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="docs")
 
 # Gzip compression 
 Compress(app)
